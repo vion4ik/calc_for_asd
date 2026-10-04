@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boost CS2</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<div class="container">
+
+  <div class="top-bar">
+    <div class="switch-group" id="currencySwitch">
+      <button class="switch-btn active" data-currency="RUB">₽</button>
+      <button class="switch-btn" data-currency="USD">$</button>
+    </div>
+  </div>
+
+  <h1 id="titleText">💎 BOOST CS2</h1>
+
+  <div class="form-group">
+    <label>Тип буста</label>
+    <select id="boostType">
+      <option value="solo">Соло буст (передача)</option>
+      <option value="party">Пати буст</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Начальное ELO</label>
+    <input type="number" id="currentElo" value="900" placeholder="900">
+  </div>
+
+  <div class="form-group">
+    <label>Конечное ELO</label>
+    <input type="number" id="targetInput" value="" min="0" max="3000" step="1" placeholder="Введите ELO">
+    <small class="hint">📌 Введите конечный ELO (макс. 3000)</small>
+  </div>
+
+  <div class="form-group">
+    <label>Регион</label>
+    <div class="switch-group region-switch" id="regionSwitch">
+      <button type="button" class="switch-btn active" data-region="RU">RU</button>
+      <button type="button" class="switch-btn" data-region="EU">EU</button>
+    </div>
+    <small class="hint hint-eu" id="euWarning" style="display:none;">⚠️ EU-регион: +15% к цене</small>
+  </div>
+
+  <button class="btn-calc" id="calcBtn" onclick="calculate()">💰 Рассчитать цену</button>
+
+  <div id="result" class="result-box">
+    <div class="placeholder">Введите данные и нажмите «Рассчитать»</div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
